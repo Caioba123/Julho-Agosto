@@ -1,0 +1,31 @@
+name: atv_31_07
+description: "Projeto Flutter para gerar APK"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_app_name: ^0.1.1
+  flutter_launcher_icons: ^0.11.0
+
+flutter_app_name:
+  name: "NÁUTICO APP"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/betao04.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
