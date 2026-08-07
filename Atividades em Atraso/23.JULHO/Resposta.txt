@@ -1,0 +1,121 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'App Básico',
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Menu Principal")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: const Text("Tela Contato"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ContatoScreen()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text("Tela Termo de Uso"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TermoScreen()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text("Tela Política de Privacidade"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const PoliticaScreen()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ContatoScreen extends StatelessWidget {
+  const ContatoScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Contato")),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: const [
+            Text("Informações de Contato"),
+            TextField(decoration: InputDecoration(labelText: "Nome")),
+            TextField(decoration: InputDecoration(labelText: "Telefone")),
+            TextField(decoration: InputDecoration(labelText: "Mensagem")),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TermoScreen extends StatelessWidget {
+  const TermoScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Termo de Uso")),
+      body: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Text(
+          "Aqui você deve informar o que a aplicação faz e que o usuário autoriza o uso dos dados.",
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+    );
+  }
+}
+
+class PoliticaScreen extends StatelessWidget {
+  const PoliticaScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Política de Privacidade")),
+      body: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Text(
+          "Nesta tela você explica como os dados são tratados e protegidos contra vazamentos.",
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+    );
+  }
+}
