@@ -1,0 +1,184 @@
+Parte 1 
+
+1. Desenvolvimento Mobile 
+É o processo de criar aplicativos para dispositivos móveis, como celulares e tablets. Esses apps aproveitam recursos como câmera, GPS e tela sensível ao toque. Exemplos: WhatsApp e Instagram.
+
+2. Aplicações Mobile  
+São diferentes de sistemas para computador porque:  
+- Tela menor e interface adaptada.  
+- Uso do toque em vez de mouse/teclado.  
+- Mobilidade (funcionam em qualquer lugar).  
+- Integração com recursos do aparelho (GPS, câmera, sensores).  
+
+3. Android e iOS 
+- Android: sistema do Google, usado em aparelhos Samsung, Motorola, Xiaomi etc.  
+- iOS: sistema da Apple, exclusivo para iPhone e iPad.  
+
+4. Aplicativo Mobile, Web e Desktop  
+- Mobile: instalado no celular (ex.: TikTok).  
+- Web: acessado pelo navegador (ex.: Google Drive).  
+- Desktop: instalado no computador (ex.: Microsoft Word).  
+
+5. Aplicações Nativas  
+São desenvolvidas especificamente para um sistema (Android ou iOS).  
+- Vantagem: melhor desempenho e acesso total aos recursos.  
+- Desvantagem: exige mais tempo e custo, pois precisa ser feito separadamente para cada sistema.  
+
+6. Aplicações Híbridas  
+Misturam código web (HTML, CSS, JS) com recursos mobile. São criadas uma vez e adaptadas para rodar em vários sistemas. Exemplo: apps feitos com Ionic ou React Native.  
+
+7. Aplicações Multiplataforma  
+Significa criar um único código que funciona em Android e iOS. Tecnologias como Flutter são úteis para equipes pequenas porque economizam tempo e esforço.  
+
+8. Flutter  
+É um framework do Google para criar aplicativos multiplataforma. Permite desenvolver apps com alta performance usando apenas um código.  
+
+9. Widgets no Flutter  
+Widgets são os blocos de construção da interface. Exemplos:  
+- Text (texto)  
+- Icon (ícone)  
+- Button (botão)  
+- Column (organizar elementos em coluna)  
+
+10. Dart e Flutter 
+- Dart: linguagem de programação.  
+- Flutter: framework que usa Dart para criar interfaces e aplicativos.  
+
+
+
+
+
+Parte 2 
+
+1. Primeiro código em Dart
+```dart
+void main() {
+  print("Estou aprendendo Dart para criar aplicativos mobile.");
+}
+```
+
+2. Dados de um usuário
+```dart
+void main() {
+  String nome = "Airton";
+  int idade = 20;
+  String cidade = "Paulista";
+  String curso = "Desenvolvimento Mobile";
+
+  print("Nome: $nome");
+  print("Idade: $idade");
+  print("Cidade: $cidade");
+  print("Curso: $curso");
+}
+```
+
+3. Perfil de aplicativo
+```dart
+void main() {
+  String nomeApp = "WhatsApp";
+  String categoria = "Comunicação";
+  int usuarios = 2000000000;
+  bool ativo = true;
+
+  print("App: $nomeApp");
+  print("Categoria: $categoria");
+  print("Usuários: $usuarios");
+  print("Ativo: $ativo");
+}
+```
+
+4. Cálculo de média
+```dart
+void main() {
+  double nota1 = 8.0;
+  double nota2 = 7.0;
+  double media = (nota1 + nota2) / 2;
+
+  print("A média do aluno é: $media");
+}
+```
+
+5. Verificação de idade
+```dart
+void main() {
+  int idade = 16;
+
+  if (idade >= 18) {
+    print("Cadastro permitido.");
+  } else {
+    print("Cadastro não permitido.");
+  }
+}
+```
+
+6. Verificação de senha
+```dart
+void main() {
+  String senhaCorreta = "1234";
+  String senhaDigitada = "1234";
+
+  if (senhaDigitada == senhaCorreta) {
+    print("Login realizado com sucesso.");
+  } else {
+    print("Senha incorreta.");
+  }
+}
+```
+
+7. Produto disponível
+```dart
+void main() {
+  int estoque = 5;
+
+  if (estoque > 0) {
+    print("Produto disponível.");
+  } else {
+    print("Produto indisponível.");
+  }
+}
+```
+
+8. Saldo suficiente
+```dart
+void main() {
+  double saldo = 100.0;
+  double compra = 80.0;
+
+  if (saldo >= compra) {
+    print("Compra aprovada.");
+  } else {
+    print("Saldo insuficiente.");
+  }
+}
+```
+
+9. Número positivo ou negativo
+```dart
+void main() {
+  int numero = -5;
+
+  if (numero >= 0) {
+    print("Número positivo ou zero.");
+  } else {
+    print("Número negativo.");
+  }
+}
+```
+
+10. Usuário ativo no aplicativo
+```dart
+void main() {
+  String nome = "Airton";
+  int idade = 20;
+  bool ativo = true;
+
+  if (ativo) {
+    print("Usuário ativo no sistema.");
+  } else {
+    print("Usuário inativo no sistema.");
+  }
+
+  print("Nome: $nome, Idade: $idade");
+}
+
+Quer que eu monte também uma versão **com entrada de dados pelo teclado (`stdin.readLineSync`)** para treinar interação com o usuário?
