@@ -1,0 +1,35 @@
+void main() {
+
+
+List<String> pilha = [];
+
+pilha.add("Atividade 1");
+
+pilha.add("Atividade 2");
+
+pilha.add("Atividade 3");
+
+pilha.add("Atividade 4");
+
+pilha.add("Atividade 5");
+
+
+print("Pilha e sua saida length.$pilha");
+
+String primeiroElemento = pilha[0];
+
+print("Primeiro elemento da pilha: $primeiroElemento");
+
+
+
+String ultimoElemento = pilha[pilha.length - 1];
+
+print("Último elemento da pilha: $ultimoElemento");
+
+
+
+int qtdElementos = pilha.length;
+
+print("Elementos e sua quantidade $qtdElementos");
+
+}
