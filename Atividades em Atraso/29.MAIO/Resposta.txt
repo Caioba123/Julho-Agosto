@@ -1,0 +1,293 @@
+Questão 1
+class Produto {
+  String _nome;
+  double _preco;
+  int _quantidade;
+
+  Produto(this._nome, this._preco, this._quantidade) {
+    if (_preco <= 0) {
+      _preco = 1; // valor mínimo válido
+    }
+    if (_quantidade < 0) {
+      _quantidade = 0;
+    }
+  }
+
+  // Getters
+  String get nome => _nome;
+  double get preco => _preco;
+  int get quantidade => _quantidade;
+
+  // Setters com validação
+  set preco(double valor) {
+    if (valor > 0) _preco = valor;
+  }
+
+  set quantidade(int valor) {
+    if (valor >= 0) _quantidade = valor;
+  }
+
+  void mostrarDados() {
+    print("Produto: $_nome | Preço: R\$ $_preco | Quantidade: $_quantidade");
+  }
+
+  void calcularTotal() {
+    print("Total em estoque: R\$ ${_preco * _quantidade}");
+  }
+}
+
+void main() {
+  Produto p1 = Produto("Mouse", 50, 10);
+  Produto p2 = Produto("Teclado", -120, 5); // inválido → ajustado
+  Produto p3 = Produto("Monitor", 900, -3); // inválido → ajustado
+
+  p1.mostrarDados();
+  p1.calcularTotal();
+
+  p2.mostrarDados();
+  p2.calcularTotal();
+
+  p3.mostrarDados();
+  p3.calcularTotal();
+}
+```
+
+---
+
+Questão 2
+void main() {
+  List<Produto> produtos = [
+    Produto("Mouse", 50, 10),
+    Produto("Teclado", 120, 5),
+    Produto("Monitor", 900, 3),
+    Produto("Cabo HDMI", 35, 20),
+    Produto("Notebook", 2500, 2),
+  ];
+
+  for (var produto in produtos) {
+    produto.mostrarDados();
+    produto.calcularTotal();
+  }
+
+  print("Quantidade total de produtos cadastrados: ${produtos.length}");
+}
+```
+
+---
+
+Questão 3
+void main() {
+  List<Produto> produtos = [
+    Produto("Mouse", 50, 10),
+    Produto("Teclado", 120, 5),
+    Produto("Monitor", 900, 3),
+    Produto("Cabo HDMI", 35, 20),
+    Produto("Notebook", 2500, 2),
+  ];
+
+  String buscado = "Monitor";
+  bool encontrado = false;
+
+  for (var produto in produtos) {
+    if (produto.nome == buscado) {
+      produto.mostrarDados();
+      encontrado = true;
+      break;
+    }
+  }
+
+  if (!encontrado) {
+    print("Produto $buscado não encontrado.");
+  }
+}
+```
+
+---
+
+Questão 4
+void main() {
+  List<Produto> produtos = [
+    Produto("Mouse", 50, 10),
+    Produto("Teclado", 120, 5),
+    Produto("Monitor", 900, 3),
+  ];
+
+  print("Lista antes da remoção:");
+  produtos.forEach((p) => p.mostrarDados());
+
+  String remover = "Teclado";
+  bool removido = produtos.removeWhere((p) => p.nome == remover) > 0;
+
+  print("\nLista depois da remoção:");
+  produtos.forEach((p) => p.mostrarDados());
+
+  if (removido) {
+    print("Produto $remover removido.");
+  } else {
+    print("Produto $remover não encontrado.");
+  }
+}
+```
+
+---
+
+Questão 5
+class Aluno {
+  String _nome;
+  double _nota;
+
+  Aluno(this._nome, this._nota) {
+    if (_nota < 0 || _nota > 10) {
+      _nota = 0; // valor inválido ajustado
+    }
+  }
+
+  String get nome => _nome;
+  double get nota => _nota;
+
+  set nota(double valor) {
+    if (valor >= 0 && valor <= 10) _nota = valor;
+  }
+
+  String verificarSituacao() {
+    if (_nota >= 7) return "Aprovado";
+    if (_nota >= 5) return "Recuperação";
+    return "Reprovado";
+  }
+
+  void mostrarDados() {
+    print("Aluno: $_nome | Nota: $_nota | Situação: ${verificarSituacao()}");
+  }
+}
+
+void main() {
+  Aluno a1 = Aluno("Gabriel", 8);
+  Aluno a2 = Aluno("Luiz", 6);
+  Aluno a3 = Aluno("Pedro", 12); // inválido → ajustado
+
+  a1.mostrarDados();
+  a2.mostrarDados();
+  a3.mostrarDados();
+}
+```
+
+---
+
+Questão 6
+void main() {
+  List<Aluno> alunos = [
+    Aluno("Gabriel", 8),
+    Aluno("Luiz", 6),
+    Aluno("Pedro", 4),
+    Aluno("Julia", 9),
+    Aluno("Neymar", 5),
+  ];
+
+  print("Todos os alunos:");
+  alunos.forEach((a) => a.mostrarDados());
+
+  print("\nAprovados:");
+  alunos.where((a) => a.verificarSituacao() == "Aprovado").forEach((a) => a.mostrarDados());
+
+  print("\nRecuperação:");
+  alunos.where((a) => a.verificarSituacao() == "Recuperação").forEach((a) => a.mostrarDados());
+
+  print("\nReprovados:");
+  alunos.where((a) => a.verificarSituacao() == "Reprovado").forEach((a) => a.mostrarDados());
+}
+```
+
+---
+
+Questão 7
+class No {
+  int _valor;
+  No? esquerdo;
+  No? direito;
+
+  No(this._valor);
+
+  int get valor => _valor;
+
+  set valor(int novoValor) {
+    if (novoValor >= 0) _valor = novoValor;
+  }
+}
+
+void main() {
+  No raiz = No(20);
+  raiz.esquerdo = No(10);
+  raiz.direito = No(30);
+
+  print("Raiz: ${raiz.valor}");
+  print("Filho esquerdo: ${raiz.esquerdo!.valor}");
+  print("Filho direito: ${raiz.direito!.valor}");
+}
+```
+
+---
+
+Questão 8 
+class No {
+  int valor;
+  No? esquerdo;
+  No? direito;
+
+  No(this.valor);
+}
+
+class Arvore {
+  No? raiz;
+
+  void inserir(int valor) {
+    raiz = _inserirRec(raiz, valor);
+  }
+
+  No _inserirRec(No? no, int valor) {
+    if (no == null) return No(valor);
+
+    if (valor < no.valor) {
+      no.esquerdo = _inserirRec(no.esquerdo, valor);
+    } else {
+      no.direito = _inserirRec(no.direito, valor);
+    }
+    return no;
+  }
+}
+
+void main() {
+  Arvore arvore = Arvore();
+  arvore.inserir(50);
+  arvore.inserir(30);
+  arvore.inserir(70);
+  arvore.inserir(20);
+  arvore.inserir(40);
+  arvore.inserir(60);
+  arvore.inserir(80);
+}
+```
+
+---
+
+Questão 9 
+class No {
+  int valor;
+  No? esquerdo;
+  No? direito;
+
+  No(this.valor);
+}
+
+class Arvore {
+  No? raiz;
+
+  void inserir(int valor) {
+    raiz = _inserirRec(raiz, valor);
+  }
+
+  No _inserirRec(No? no, int valor) {
+    if (no == null) return No(valor);
+    if (valor < no.valor) {
+      no.esquerdo = _inserirRec(no.esquerdo, valor);
+    } else {
+      no.direito = _inser
