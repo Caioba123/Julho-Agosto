@@ -1,0 +1,195 @@
+
+import 'dart:io';
+
+void main() {
+  // Entrada de dados
+  print("Digite o nome do aluno:");
+  String nome = stdin.readLineSync()!;
+
+  print("Digite a turma:");
+  String turma = stdin.readLineSync()!;
+
+  print("Digite a idade:");
+  int idade = int.parse(stdin.readLineSync()!);
+
+  print("Digite a primeira nota:");
+  double nota1 = double.parse(stdin.readLineSync()!);
+
+  print("Digite a segunda nota:");
+  double nota2 = double.parse(stdin.readLineSync()!);
+
+  // Cálculo da média
+  double media = (nota1 + nota2) / 2;
+
+  // Saída de dados
+  print("\n--- Dados do Aluno ---");
+  print("Nome: $nome");
+  print("Turma: $turma");
+  print("Idade: $idade");
+  print("Nota 1: $nota1");
+  print("Nota 2: $nota2");
+  print("Média: $media");
+
+  // Verificação de aprovação
+  if (media >= 7) {
+    print("Situação: Aprovado");
+  } else {
+    print("Situação: Recuperação");
+  }
+}
+
+
+
+Atividade Parte II — Modelos Iniciais
+
+1. Saudação com nome
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite seu nome:");
+  String nome = stdin.readLineSync()!;
+  print("Olá, $nome! Seja bem-vindo.");
+}
+
+
+
+2. Idade no próximo ano
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite sua idade:");
+  int idade = int.parse(stdin.readLineSync()!);
+  print("No próximo ano você terá ${idade + 1} anos.");
+}
+
+
+3. Soma de dois números
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite o primeiro número:");
+  int n1 = int.parse(stdin.readLineSync()!);
+
+  print("Digite o segundo número:");
+  int n2 = int.parse(stdin.readLineSync()!);
+
+  print("A soma é: ${n1 + n2}");
+}
+
+
+4. Média de duas notas
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite a primeira nota:");
+  double nota1 = double.parse(stdin.readLineSync()!);
+
+  print("Digite a segunda nota:");
+  double nota2 = double.parse(stdin.readLineSync()!);
+
+  double media = (nota1 + nota2) / 2;
+  print("A média é: $media");
+}
+
+
+5. Desconto em produto
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite o valor do produto:");
+  double valor = double.parse(stdin.readLineSync()!);
+
+  double desconto = valor * 0.1; // 10% de desconto
+  double valorFinal = valor - desconto;
+
+  print("Valor com desconto: $valorFinal");
+}
+
+
+6. Verificação de voto
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite sua idade:");
+  int idade = int.parse(stdin.readLineSync()!);
+
+  if (idade >= 16) {
+    print("Você pode votar.");
+  } else {
+    print("Você não pode votar.");
+  }
+}
+
+
+7. Cadastro de aluno
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite o nome:");
+  String nome = stdin.readLineSync()!;
+
+  print("Digite o curso:");
+  String curso = stdin.readLineSync()!;
+
+  print("Digite a matrícula:");
+  String matricula = stdin.readLineSync()!;
+
+  print("Aluno: $nome, Curso: $curso, Matrícula: $matricula");
+}
+
+
+8. Média de três números
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite o primeiro número:");
+  int n1 = int.parse(stdin.readLineSync()!);
+
+  print("Digite o segundo número:");
+  int n2 = int.parse(stdin.readLineSync()!);
+
+  print("Digite o terceiro número:");
+  int n3 = int.parse(stdin.readLineSync()!);
+
+  double media = (n1 + n2 + n3) / 3;
+  print("A média é: $media");
+}
+
+
+9. Verificação de senha
+dart
+import 'dart:io';
+
+void main() {
+  print("Digite a senha:");
+  String senha = stdin.readLineSync()!;
+
+  if (senha == "1234") {
+    print("Acesso permitido.");
+  } else {
+    print("Senha incorreta.");
+  }
+}
+
+10. Total da compra
+import 'dart:io';
+
+void main() {
+  print("Digite a quantidade de produtos:");
+  int quantidade = int.parse(stdin.readLineSync()!);
+
+  print("Digite o preço unitário:");
+  double preco = double.parse(stdin.readLineSync()!);
+
+  double total = quantidade * preco;
+  print("Total da compra: $total");
+}
+
