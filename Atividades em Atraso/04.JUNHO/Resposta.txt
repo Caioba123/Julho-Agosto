@@ -1,0 +1,58 @@
+class Aluno {
+  String nome;
+  List<double> notas;
+
+  Aluno(this.nome, this.notas);
+
+  double calcularMedia() {
+    double soma = notas.reduce((a, b) => a + b);
+    return soma / notas.length;
+  }
+
+  String verificarSituacao() {
+    double media = calcularMedia();
+    if (media >= 7) return "Aprovado";
+    if (media >= 5) return "Recuperação";
+    return "Reprovado";
+  }
+
+  void mostrarDados() {
+    print("Aluno: $nome | Notas: $notas | Média: ${calcularMedia().toStringAsFixed(2)} | Situação: ${verificarSituacao()}");
+  }
+}
+
+
+
+import 'dart:math';
+
+void main() {
+  Random random = Random();
+
+  // Criando 4 turmas
+  Map<String, List<Aluno>> turmas = {
+    "Turma A": [],
+    "Turma B": [],
+    "Turma C": [],
+    "Turma D": [],
+  };
+
+  // Adicionando 20 alunos por turma
+  turmas.forEach((nomeTurma, listaAlunos) {
+    for (int i = 1; i <= 20; i++) {
+      List<double> notas = [
+        (random.nextDouble() * 10),
+        (random.nextDouble() * 10),
+        (random.nextDouble() * 10),
+      ];
+      listaAlunos.add(Aluno("Aluno $i", notas));
+    }
+  });
+
+  // Exibindo dados de cada turma
+  turmas.forEach((nomeTurma, listaAlunos) {
+    print("\n--- $nomeTurma ---");
+    for (var aluno in listaAlunos) {
+      aluno.mostrarDados();
+    }
+  });
+}
