@@ -1,0 +1,87 @@
+import 'dart:io';
+
+// Classe abstrata
+abstract class Deposito {
+  String nome;
+  Deposito(this.nome);
+
+  void mostrarFuncao(); // método abstrato
+}
+
+// Classes concretas
+class Gerente extends Deposito {
+  Gerente(String nome) : super(nome);
+
+  @override
+  void mostrarFuncao() {
+    print("Gerente $nome: responsável pela administração do depósito.");
+  }
+}
+
+class Caixa extends Deposito {
+  Caixa(String nome) : super(nome);
+
+  @override
+  void mostrarFuncao() {
+    print("Caixa $nome: responsável pelo atendimento no caixa.");
+  }
+}
+
+class Atendente extends Deposito {
+  Atendente(String nome) : super(nome);
+
+  @override
+  void mostrarFuncao() {
+    print("Atendente $nome: responsável pelo atendimento ao cliente.");
+  }
+}
+
+// Programa principal com menu
+void main() {
+  List<Deposito> funcionarios = [];
+
+  while (true) {
+    print("\n--- MENU ---");
+    print("1 - Adicionar Gerente");
+    print("2 - Adicionar Caixa");
+    print("3 - Adicionar Atendente");
+    print("4 - Listar Funcionários");
+    print("0 - Sair");
+
+    String? opcao = stdin.readLineSync();
+
+    switch (opcao) {
+      case '1':
+        print("Digite o nome do Gerente:");
+        String nome = stdin.readLineSync()!;
+        funcionarios.add(Gerente(nome));
+        break;
+
+      case '2':
+        print("Digite o nome do Caixa:");
+        String nome = stdin.readLineSync()!;
+        funcionarios.add(Caixa(nome));
+        break;
+
+      case '3':
+        print("Digite o nome do Atendente:");
+        String nome = stdin.readLineSync()!;
+        funcionarios.add(Atendente(nome));
+        break;
+
+      case '4':
+        print("\n--- Funcionários ---");
+        for (var f in funcionarios) {
+          f.mostrarFuncao();
+        }
+        break;
+
+      case '0':
+        print("Encerrando o programa...");
+        return;
+
+      default:
+        print("Opção inválida!");
+    }
+  }
+}
